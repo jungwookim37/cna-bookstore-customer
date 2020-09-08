@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: customer
-          image: cnaacr.azurecr.io/customer:latest
+          image: cnaacr.azurecr.io/cna-bookstore-customer:latest
           ports:
             - containerPort: 8080
           readinessProbe:
