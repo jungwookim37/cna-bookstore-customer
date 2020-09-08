@@ -37,8 +37,6 @@ spring:
 
 
 ---
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
 metadata:
   name: gateway
 spec:
