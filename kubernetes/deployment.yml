@@ -2,23 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: customer
-  namespace: istio-cb-ns
   labels:
     app: customer
-    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: customer
-      version: v1
   template:
     metadata:
       labels:
         app: customer
-        version: v1
       annotations:
-        sidecar.istio.io/inject: "true"
     spec:
       containers:
         - name: customer
