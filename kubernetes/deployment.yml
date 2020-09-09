@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: customer
-          image: jwkimacr.azurecr.io/cna-bookstore-customer:latest
+          image: jwkimacr.azurecr.io/customer:latest
           ports:
             - containerPort: 8080
           readinessProbe:
