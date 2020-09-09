@@ -114,6 +114,23 @@ public class MyPageViewHandler {
         }
     }
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenDeliveryStatusChanged_then_UPDATE_4 (@Payload MessageSended messageSended) {
+        try {
+            if (messageSended.isMe()) {
+                // view 객체 조회
+                List<MyPage> myPageList = myPageRepository.findByOrderId(messageSended.getId());
+                for (MyPage myPage : myPageList) {
+                    // view 객체에 이벤트의 Value 를 set 함
+                    myPage.setKakaoMessage(messageSended.getKakaoMessage());
+                    // view 레파지 토리에 save
+                    myPageRepository.save(myPage);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
 

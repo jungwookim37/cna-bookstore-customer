@@ -27,7 +27,15 @@ public class MyPage {
         private Integer quantity;
         private String deliveryAddress;
         private Long deliveryId;
+        private String kakaoMessage;
 
+        public String getKakaoMessage() {
+            return kakaoMessage;
+        }
+
+        public void setKakaoMessage(String kakaoMessage) {
+            this.kakaoMessage = kakaoMessage;
+        }
 
         public Long getCustomerId() {
             return customerId;
