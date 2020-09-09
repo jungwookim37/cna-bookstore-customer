@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: customer
-      annotations:
     spec:
       containers:
         - name: customer
